@@ -1,6 +1,7 @@
 package com.example.taskmanagementapp.Utils
 
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -42,6 +43,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, NAME, null, 
         db?.insert(TODO_TABLE, null, cv)
     }
 
+    @SuppressLint("Range")
     fun getAllTasks(): List<ToDoModel> {
         val taskList = ArrayList<ToDoModel>()
         var cur: Cursor? = null

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskmanagementapp.Adapter.ToDoAdapter
 import com.example.taskmanagementapp.Model.ToDoModel
+import com.example.taskmanagementapp.Utils.DatabaseHandler
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity(), DialogCloseListener {
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
 
         fab = findViewById(R.id.fab)
 
-        taskList = db.allTasks.toMutableList()
+        taskList = db.getAllTasks().toMutableList()
         taskList.reverse()
         tasksAdapter.setTasks(taskList)
 
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
     }
 
     override fun handleDialogClose(dialog: DialogInterface) {
-        taskList = db.allTasks.toMutableList()
+        taskList = db.getAllTasks().toMutableList()
         taskList.reverse()
         tasksAdapter.setTasks(taskList)
         tasksAdapter.notifyDataSetChanged()

@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.CompoundButton
 import androidx.recyclerview.widget.RecyclerView
-import net.penguincoders.doit.AddNewTask
+import com.example.taskmanagementapp.AddNewTask
 import com.example.taskmanagementapp.MainActivity
 import com.example.taskmanagementapp.Model.ToDoModel
 import com.example.taskmanagementapp.R
-import net.penguincoders.doit.Utils.DatabaseHandler
+import com.example.taskmanagementapp.Utils.DatabaseHandler
+
 
 class ToDoAdapter(private val db: DatabaseHandler, private val activity: MainActivity) :
     RecyclerView.Adapter<ToDoAdapter.ViewHolder>() {
